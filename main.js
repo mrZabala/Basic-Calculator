@@ -38,15 +38,9 @@ function updateDisplay(){
     output.value = opeCurrent;
 }
 
-function clear(){
-     opeCurrent = '';
-     opePrevious = '';
-     operation = undefined;
-}
-
 function calculate(){
     var calc;
-    const previus = parseFloat(opePrevious);  // Corregí el nombre de la variable a previus
+    const previus = parseFloat(opePrevious); 
     const current = parseFloat(opeCurrent);
     if(isNaN(previus) || isNaN(current)) return;
     switch(operation){
@@ -80,6 +74,12 @@ function selectOperation(op){
     operation = op.toString();
     opePrevious = opeCurrent;
     opeCurrent = '';
+}
+
+function clear(){
+     opeCurrent = '';
+     opePrevious = '';
+     operation = undefined;
 }
 
 clear();
